@@ -1,3 +1,7 @@
+
+<div class="container">
+    <div class="form-group">
+            <input type="text" class="form-control" style="width: 300px;" name="search" [(ngModel)]="searchText" placeholder="Search by Lastname"/>        
 <h2 class="text-center">Employee List</h2>
 <table class="table table-striped">
     <thead>
@@ -10,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-         <tr  *ngFor="let employee of employees">
+         <tr  *ngFor="let employee of employees | employeeFilter:searchText">
             <td>{{employee.id}}</td>
             <td>{{employee.firstName}}</td>
             <td>{{employee.lastName}}</td>
@@ -23,3 +27,5 @@
         </tr>
     </tbody>
 </table>
+</div>
+</div>
